@@ -1,0 +1,7 @@
+{
+  "name": "TVstation-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
