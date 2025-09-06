@@ -1,0 +1,21 @@
+<div class="select-container">
+  <ion-select
+    [label]="label"
+    labelPlacement="floating"
+    [placeholder]="placeholder"
+    [value]="control.value"
+    (ionChange)="doSelect($event)"
+    [compareWith]="compareWith"
+    [class.ion-invalid]="control.invalid && control.touched"
+    [required]="required"
+  >
+    <ion-select-option *ngFor="let option of options" [value]="option.id">
+      {{ option.value }}
+    </ion-select-option>
+  </ion-select>
+
+  <!-- Mensajes de error -->
+  <div class="error-messages" *ngIf="control.invalid && control.touched">
+    <div class="error-message" *ngIf="hasError('required')">{{ getErrorMessage('required') || 'Este campo es obligatorio' }}</div>
+  </div>
+</div>

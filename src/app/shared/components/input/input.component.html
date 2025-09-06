@@ -1,0 +1,30 @@
+<div class="input-container">
+  <ion-input
+    [label]="label"
+    labelPlacement="floating"
+    [placeholder]="placeholder"
+    [type]="getInputType()"
+    [value]="control.value"
+    (keyup)="doWrite($event)"
+    [class.ion-invalid]="control.invalid && control.touched"
+    [required]="required"
+  >
+    @if (type === 'password'){
+      <ion-button 
+        fill="clear" 
+        slot="end" 
+        (click)="togglePasswordVisibility()">
+        <ion-icon [name]="isPasswordVisible ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+      </ion-button>
+    }
+  </ion-input>
+
+  <!-- Mensajes de error -->
+  <div class="error-messages" *ngIf="control.invalid && control.touched">
+    <div class="error-message" *ngIf="hasError('required')">{{ getErrorMessage('required') || 'Este campo es obligatorio' }}</div>
+    <div class="error-message" *ngIf="hasError('email')">{{ getErrorMessage('email') || 'Formato de correo electrónico inválido' }}</div>
+    <div class="error-message" *ngIf="hasError('minlength')">{{ getErrorMessage('minlength') || 'Longitud mínima no alcanzada' }}</div>
+    <div class="error-message" *ngIf="hasError('containsNumbers')">{{ getErrorMessage('containsNumbers') || 'No se permiten números en este campo' }}</div>
+    <div class="error-message" *ngIf="hasError('invalidEmailFormat')">{{ getErrorMessage('invalidEmailFormat') || 'El formato del correo electrónico no es válido' }}</div>
+  </div>
+</div>

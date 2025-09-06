@@ -1,0 +1,110 @@
+<ion-content [fullscreen]="true">
+  <div class="register-container">
+    <div class="register-header">
+      <h1>Crear cuenta</h1>
+      <p>Completa el formulario para registrarte</p>
+    </div>
+    
+    <form [formGroup]="registerForm" (ngSubmit)="doRegister()">
+      <ion-card>
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md="6">
+                <app-input
+                  label="Nombre"
+                  placeholder="Ingresa tu nombre"
+                  type="text"
+                  [control]="name"
+                  [required]="true"
+                  [errorMessages]="{required: 'El nombre es obligatorio'}"
+                >
+                </app-input>
+              </ion-col>
+              <ion-col size="12" size-md="6">
+                <app-input
+                  label="Apellido"
+                  placeholder="Ingresa tu apellido"
+                  type="text"
+                  [control]="lastname"
+                  [required]="true"
+                  [errorMessages]="{required: 'El apellido es obligatorio'}"
+                >
+                </app-input>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col size="12">
+                <app-input
+                  label="Correo electrónico"
+                  placeholder="ejemplo@correo.com"
+                  type="email"
+                  [control]="email"
+                  [required]="true"
+                  [errorMessages]="{required: 'El correo electrónico es obligatorio', email: 'Formato de correo electrónico inválido'}"
+                >
+                </app-input>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col size="12" size-md="6">
+                <app-input
+                  label="Contraseña"
+                  placeholder="**********"
+                  type="password"
+                  [control]="password"
+                  [required]="true"
+                  [errorMessages]="{required: 'La contraseña es obligatoria', minlength: 'La contraseña debe tener al menos 6 caracteres'}"
+                >
+                </app-input>
+              </ion-col>
+              <ion-col size="12" size-md="6">
+                <app-input
+                  label="Confirmar contraseña"
+                  placeholder="**********"
+                  type="password"
+                  [control]="confirmPassword"
+                  [required]="true"
+                  [errorMessages]="{required: 'Confirma tu contraseña', passwordMismatch: 'Las contraseñas no coinciden'}"
+                >
+                </app-input>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col size="12">
+                <app-select
+                  label="País"
+                  placeholder="Selecciona tu país"
+                  [control]="country"
+                  [options]="countries"
+                  [required]="true"
+                  [errorMessages]="{required: 'Selecciona un país'}"
+                >
+                </app-select>
+              </ion-col>
+            </ion-row>
+            
+            <ion-row>
+              <ion-col>
+                <app-button
+                  value="Registrarse"
+                  type="submit"
+                  [disabled]="registerForm.invalid"
+                  color="primary"
+                  [expand]="true"
+                ></app-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </form>
+    
+    <div class="login-link">
+      <p>¿Ya tienes una cuenta? <a (click)="goToLogin()">Inicia sesión aquí</a></p>
+    </div>
+  </div>
+</ion-content>

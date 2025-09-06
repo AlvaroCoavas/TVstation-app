@@ -1,0 +1,14 @@
+<ion-button 
+    [type]="type" 
+    [disabled]="disabled || loading"
+    [color]="color"
+    [expand]="expand ? 'block' : undefined"
+    [size]="size"
+    (click)="onClick($event)"
+    [ngClass]="getClasses()"
+>
+    <ion-spinner name="circular" *ngIf="loading"></ion-spinner>
+    <ion-icon [name]="icon" *ngIf="icon && iconPosition === 'start' && !loading"></ion-icon>
+    {{ value }}
+    <ion-icon [name]="icon" *ngIf="icon && iconPosition === 'end' && !loading"></ion-icon>
+</ion-button>

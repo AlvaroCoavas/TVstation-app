@@ -1,0 +1,26 @@
+.select-container {
+  margin-bottom: 16px;
+  width: 100%;
+
+  ion-select {
+    width: 100%;
+    --border-color: var(--ion-color-medium);
+    --border-radius: 4px;
+    --padding-start: 8px;
+    --padding-end: 8px;
+
+    &.ion-invalid {
+      --border-color: var(--ion-color-danger);
+    }
+  }
+
+  .error-messages {
+    margin-top: 4px;
+    padding-left: 16px;
+
+    .error-message {
+      color: var(--ion-color-danger);
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+ion-button {
+  --border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: none;
+  
+  &.btn-expand {
+    width: 100%;
+  }
+  
+  &.btn-with-icon {
+    display: flex;
+    align-items: center;
+    
+    &.icon-start ion-icon {
+      margin-right: 8px;
+    }
+    
+    &.icon-end ion-icon {
+      margin-left: 8px;
+    }
+  }
+  
+  &.btn-loading {
+    ion-spinner {
+      margin-right: 8px;
+    }
+  }
+  
+  &.btn-small {
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  &.btn-default {
+    height: 40px;
+    font-size: 14px;
+  }
+  
+  &.btn-large {
+    height: 48px;
+    font-size: 16px;
+  }
+}

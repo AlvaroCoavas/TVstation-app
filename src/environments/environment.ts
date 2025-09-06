@@ -3,8 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  newsApiUrl: 'https://newsapi.org/v2',
+  newsApiKey: 'd207d20a73674f60bcd66747a5f9b453', // API key real de NewsAPI
+  countriesApiUrl: 'https://countriesnow.space/api/v0.1/countries/flag/unicode'
 };
+
+/*
+ * IMPORTANTE: Para usar la API de noticias necesitas:
+ * 1. Registrarte en https://newsapi.org/register
+ * 2. Obtener tu API key gratuita
+ * 3. Reemplazar 'demo-api-key-for-testing' con tu API key real
+ * 4. La API gratuita permite 1000 peticiones por día
+ */
 
 /*
  * For easier debugging in development mode, you can import the following file
